@@ -1,0 +1,342 @@
+/**
+* указывает на то, что класс принадлежит пакету 
+*/
+package main1; 
+/**
+* импортируем класс для запуска формы из потока очереди
+*/
+import java.awt.EventQueue; 
+
+/**
+* Импортируем класс для создания фрейма
+*/
+import javax.swing.JFrame; 
+/**
+* Импортируем класс для создания панели
+*/
+import javax.swing.JPanel; 
+/**
+* Импортируем класс для создания пустой рамки, которая позволяет создать отступы вокруг панели
+*/
+import javax.swing.border.EmptyBorder; 
+/**
+* Импортируем класс с формой об ошибке
+*/
+import main1.error; 
+/**
+* Импортируем класс с основным меню программы
+*/
+import main1.main2; 
+/**
+* Импортируем класс для текстового поля с возможностью переносить строку
+*/
+import javax.swing.JTextArea; 
+/**
+* Импортируем класс для произвольного текста
+*/
+import javax.swing.JLabel; 
+/**
+* Импортируем класс для  текстового поля
+*/
+import javax.swing.JTextField; 
+/**
+* Импортируем класс для отображения данных в виде списка
+*/
+import javax.swing.JList; 
+/**
+* Импортируем класс выпадающего списка
+*/
+import javax.swing.JComboBox; 
+/**
+*Импортируем класс значения по умолчанию для выпадающего списка
+*/
+import javax.swing.DefaultComboBoxModel; 
+/**
+* Импортируем класс для чек-бокса
+*/
+import javax.swing.JRadioButton; 
+/**
+* Импортируем класс для кнопки
+*/
+import javax.swing.JButton; 
+/**
+* Импортируем класс шрифтов
+*/
+import java.awt.Font; 
+/**
+* Импортируем класс-слушатель для передачи информации о событии
+*/
+import java.awt.event.ActionListener; 
+/**
+* Импортируем класс для обработки нажатий на кнопки
+*/
+import java.awt.event.ActionEvent; 
+/**
+* Импортируем класс текстовых полей
+*/
+import java.awt.TextField; 
+/**
+* Импортируем класс текстовых панелей
+*/
+import javax.swing.JTextPane; 
+/**
+* Импортируем класс кнопок
+*/
+import java.awt.Button; 
+/**
+* Импортируем класс задания системного цвета
+*/
+import java.awt.SystemColor; 
+/**
+* Импортируем класс панели
+*/
+import javax.swing.JEditorPane; 
+/**
+* Импортируем класс задания цвета
+*/
+import java.awt.Color; 
+/**
+* импортируем класс форматированных полей
+*/
+import javax.swing.JFormattedTextField;
+import javax.swing.JMenuItem; 
+
+public class registration extends JFrame {
+	/**
+* создаём метод, который будет запускаться
+*/
+	public static void main(String[] args) { 
+		/**
+* запускаем форму из очереди потоков
+*/
+		EventQueue.invokeLater(new Runnable() { 
+		 /**
+* запуск
+*/
+			public void run() {
+			
+				try {
+				/**
+* создаём переменную для формы регистрации
+*/
+					registration frame = new registration(); 
+					/**
+* задаём видимость для фрейма
+*/
+					frame.setVisible(true); 
+				/**
+* указание на исключение
+*/
+				} catch (Exception e) { 
+				/**
+* отображает трассировку стека
+*/
+					e.printStackTrace(); 
+				}
+			}
+		});
+	}
+
+	/**
+**
+	 * Create the frame.
+	 
+*/
+	public registration () {
+		/**
+* задаём заголовок для фрейма
+*/
+		setTitle("\u041E\u043A\u043D\u043E \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u0438 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F");
+		/**
+* указываем действие, которое необходимо выполнить когда пользователь закрывает фрейм нажатием на крестик. В данном случае закрыть фрейм
+*/
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		/**
+* задаём координаты и размеры панели. В данном случае координаты: 100 по Х и 100 по У координаты самой левой верхней точки компонента; 450 пикселей - ширина 273 высота
+*/
+		setBounds(100, 100, 513, 361);  
+		/**
+*  устанавливаем менеджер компоновки
+*/
+		getContentPane().setLayout(null); 
+		
+		/**
+* создаём текстовую панель
+*/
+		JTextPane textPane = new JTextPane(); 
+		textPane.setFont(new Font("Tahoma", Font.BOLD, 16));
+		/**
+* задаём цвет
+*/
+		textPane.setBackground(SystemColor.control); 
+		/**
+* задаём текст
+*/
+		textPane.setText("\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F:"); 
+		/**
+* Задаём координаты
+*/
+		textPane.setBounds(135, 22, 216, 31); 
+		/**
+* Добавляем на нашу панель
+*/
+		getContentPane().add(textPane);
+		
+		 /**
+* создаём текстовую панель
+*/
+		JTextPane textPane_2 = new JTextPane();
+		textPane_2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		/**
+* задаём цвет
+*/
+		textPane_2.setBackground(SystemColor.control); 
+		/**
+* задаём текст
+*/
+		textPane_2.setText("\u041B\u043E\u0433\u0438\u043D"); 
+		/**
+* Задаём координаты
+*/
+		textPane_2.setBounds(63, 102, 101, 30); 
+		/**
+* Добавляем на нашу панель
+*/
+		getContentPane().add(textPane_2); 
+		
+		/**
+* создаём текстовую панель
+*/
+		JTextPane textPane_3 = new JTextPane(); 
+		textPane_3.setFont(new Font("Tahoma", Font.BOLD, 20));
+		/**
+* задаём текст
+*/
+		textPane_3.setText("\u041F\u0430\u0440\u043E\u043B\u044C"); 
+		/**
+* задаём цвет
+*/
+		textPane_3.setBackground(SystemColor.menu);
+		/**
+* Задаём координаты
+*/
+		textPane_3.setBounds(63, 174, 97, 36); 
+		/**
+* Добавляем на нашу панель
+*/
+		getContentPane().add(textPane_3); 
+		
+		/**
+* создаём поле для ввода логина
+*/
+		final JFormattedTextField formattedTextField = new JFormattedTextField(); 
+		/**
+* Задаём координаты
+*/
+		formattedTextField.setBounds(377, 69, 106, 20); 
+		/**
+* Добавляем на нашу панель
+*/
+		getContentPane().add(formattedTextField);
+		
+		/**
+* создаём поле для ввода пароля
+*/
+		final JFormattedTextField formattedTextField_1 = new JFormattedTextField(); 
+		formattedTextField_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		/**
+* Задаём координаты
+*/
+		formattedTextField_1.setBounds(253, 182, 102, 28); 
+		/**
+* Добавляем на нашу панель
+*/
+		getContentPane().add(formattedTextField_1); 
+		/**
+* создаём кнопку для авторизации
+*/
+		JButton btnNewButton_1 = new JButton("\u0412\u0445\u043E\u0434"); 
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		/**
+* создаём событие на кнопку
+*/
+		btnNewButton_1.addActionListener(new ActionListener() { 
+		
+			public void actionPerformed(ActionEvent e) {
+			/**
+* задаём переменную для логина
+*/
+				int L = 0; 
+				/**
+* задаём переменную для пароля
+*/
+				int P = 0; 
+				
+				/**
+* считываем логин
+*/
+				L=Integer.parseInt(formattedTextField.getText()); 
+				/**
+* 	считываем пароль
+*/
+				P=Integer.parseInt(formattedTextField_1.getText());	
+						/**
+* Проверка верности логина и пароля
+*  
+*/
+				
+				
+				
+				if ((L == 1) && (P == 1)){ 
+				/**
+* в случае совпадения, открываем окно с основным меню программы
+*/
+					main2 nc = new main2(); 
+					/**
+* задаём видимость
+*/
+					nc.setVisible(true); 
+				
+				}else{
+				/**
+* если логин пароль неверные, то выдаём сообщение об ошибке
+*/
+					error bc = new error(); 
+				/**
+* задаём видимость
+*/
+					bc.setVisible(true);  
+				}
+				
+			}
+		});
+		/**
+* Задаём координаты
+*/
+		btnNewButton_1.setBounds(103, 278, 89, 23); 
+		/**
+* Добавляем на нашу панель
+*/
+		getContentPane().add(btnNewButton_1); 
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\u0440", "\u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u043B\u0438\u0446\u043E", "\u042E\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043A\u043E\u0435 \u043B\u0438\u0446\u043E"}));
+		comboBox.setToolTipText("\r\n");
+		comboBox.setBounds(253, 102, 192, 30);
+		getContentPane().add(comboBox);
+		
+		JButton btnNewButton = new JButton("\u0412\u044B\u0445\u043E\u0434");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				/**
+				*Выход из текущего окна 
+				*/
+								setVisible(false); 
+			}
+		});
+		btnNewButton.setBounds(295, 276, 97, 25);
+		getContentPane().add(btnNewButton);
+	}
+}
